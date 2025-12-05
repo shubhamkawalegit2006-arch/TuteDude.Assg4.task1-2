@@ -1,30 +1,25 @@
-def read_file_safely():
-    filename = 'sample.txt'
+import os
+from os import remove
 
-    try:
-
-        with open(filename, 'r') as file:
-            print("Reading file content:")
-            for i, line in enumerate(file, start=1):
-                # .strip() removes the extra newline character at the end of the line
-                print(f"Line {i}: {line.strip()}")
-        except FileNotFoundError:
-        print(f"Error: The file '{filename}' was not found.")
-if _name_ == "_main_":
-    read_file_safely()
+#filename=open('sample.txt','x')
+filename=open('sample.txt','r')
+filename=open('sample.txt','w')
+filename.write('this is a sample.txt')
+filename.write('\nit contain multiple lines')
+filename.close()
+remove('sample.txt')
 
 
-text_to_write = input("Enter text to write to the file: ")
-with open("output.txt", "w") as file:
-    file.write(text_to_write + "\n")
-print("Data successfully written to output.txt.")
-print()
-text_to_append = input("Enter additional text to append: ")
-with open("output.txt", "a") as file:
-    file.write(text_to_append + "\n")
-print("Data successfully appended.")
-print()
-print("Final content of output.txt:")
-with open("output.txt", "r") as file:
-    content = file.read()
-    print(content)
+#filename= open('output.txt','xt')
+filename=open('output.txt','w')
+Text=input('Enter your text here')
+filename.write(Text)
+print("Data successfully written to file output.txt")
+append_text=input('Enter the additional data here')
+filename.write(append_text)
+print("Data successfully appended")
+
+print("Final contents of file output.txt")
+print("Text")
+print("append_text")
+filename.close()
