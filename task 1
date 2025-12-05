@@ -1,11 +1,10 @@
-def read_file_safely():
-    filename = 'sample.txt'
-try:
-        with open(filename, 'r') as file:
-            print("Reading file content:")
-            for i, line in enumerate(file, start=1)
-                print(f"Line {i}: {line.strip()}")
-        except FileNotFoundError:
-        print(f"Error: The file '{filename}' was not found.")
-if _name_ == "_main_":
-    read_file_safely()
+import os
+from os import remove
+
+#filename=open('sample.txt','x')
+filename=open('sample.txt','r')
+filename=open('sample.txt','w')
+filename.write('this is a sample.txt')
+filename.write('\nit contain multiple lines')
+filename.close()
+remove('sample.txt')
